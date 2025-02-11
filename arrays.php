@@ -1,38 +1,37 @@
 <?php
 
-$numeros = [5,8,12,5,9];
-echo $numeros[0];
-echo $numeros[1];
-echo $numeros[2];
-echo $numeros[3];
-echo $numeros[4];
+$numerosArray = [5,8,12,5,9];
+    foreach ($numerosArray as $numeroArray){
+        echo $numeroArray;
+    }
 
 $x = array(10,20,30,40,50, 60);
-echo count($numeros);
-unset($numeros[4]);
-$nuevosNumeros = [];
-foreach($numeros as $numero){
-    $nuevosNumeros[] = $numero;
-}
-echo count($numeros);
+echo count($x);
+unset($x[4]);
+$x = array_values($x);
+var_dump($x);
 
-$palabras = ['campana', 'elefante','guagua','+'];
-if(strchr($palabras[2], 'g') == true){
-    echo 'Tiene la G!';
+function BuscarLetra(){
+    $palabras = ['campana', 'elefante','guagua','+'];
+    $letra = 'g';
+    foreach($palabras as $palabra){
+        if(strpos($palabra, $letra) == false){
+            echo 'La palabra '.$palabra.' no tiene la g!';
+        }
+    }
 }
-elseif(strchr($palabras[2], 'g') == false){
-    echo 'No tiene la G!';
+BuscarLetra();
+function Info(){
+    $PersonalInfo = [
+        'nombre' => 'Marc',
+        'edad' => 36,
+        'email' => 'mks4nch3@gmail.com',
+        'comida' => 'yakimeshi',
+    ];
+    return 'Me llamo '.$PersonalInfo['nombre'].',y tengo '.$PersonalInfo['edad'].'. 
+    Mi email es '.$PersonalInfo['email'].' y me encanta el '.$PersonalInfo['comida'].'.';
 }
-else{
-    echo 'Escoge otra letra';
-}
-
-$PersonalInfo = [
-    'nombre' => 'Marc',
-    'edad' => 36,
-    'email' => 'mks4nch3@gmail.com',
-    'comida' => 'yakimeshi',
-];
+Info();
 
 
 ?>
