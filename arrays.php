@@ -11,17 +11,19 @@ unset($x[4]);
 $x = array_values($x);
 var_dump($x);
 
+
 function BuscarLetra(array $palabras, string $letra){
     foreach($palabras as $palabra){
         if(strpos($palabra, $letra) === false){
-            echo 'La palabra '.$palabra.' no tiene la '.$letra.'.';
+            return false;
         }
         else{
-            echo 'La palabra '.$palabra.' sí tiene la '.$letra.'.';
+            return true;
         }
     }
 }
-BuscarLetra(['campana', 'elefante', 'guagua', '+'], 'e');
+$palabras = ['campana', 'elefante', 'guagua', '+'];
+echo BuscarLetra($palabras, 'e') ? "Todas tienen la e!" : "Sorry profe";
 function Info(){
     $PersonalInfo = [
         'nombre' => 'Marc',
