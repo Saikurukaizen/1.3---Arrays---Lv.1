@@ -12,18 +12,19 @@ $x = array_values($x);
 var_dump($x);
 
 
-function BuscarLetra(array $palabras, string $letra){
+function BuscarChar(array $palabras, string $char){
     foreach($palabras as $palabra){
-        if(strpos($palabra, $letra) === false){
+        if(strpos($palabra, $char) === false){
             return false;
-        }
-        else{
-            return true;
-        }
+        } 
+        return true;
     }
+   
 }
-$palabras = ['campana', 'elefante', 'guagua', '+'];
-echo BuscarLetra($palabras, 'e') ? "Todas tienen la e!" : "Sorry profe";
+$palabras = ['hola', 'Php','Html'];
+var_dump(BuscarChar($palabras, "h"));
+var_dump(BuscarChar($palabras, "l"));
+
 function Info(){
     $PersonalInfo = [
         'nombre' => 'Marc',
