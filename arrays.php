@@ -17,9 +17,8 @@ function BuscarChar(array $palabras, string $char){
         if(strpos($palabra, $char) === false){
             return false;
         } 
-        return true;
     }
-   
+    return true;   
 }
 $palabras = ['hola', 'Php','Html'];
 var_dump(BuscarChar($palabras, "h"));
